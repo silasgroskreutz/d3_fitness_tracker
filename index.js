@@ -5,7 +5,7 @@ const formAct = document.querySelector('form span');
 const input = document.querySelector('input');
 const error = document.querySelector('.error');
 
-let activity = 'cycling';
+var activity = 'cycling';
 
 btns.forEach(btn => {
   btn.addEventListener('click', e => {
@@ -39,7 +39,8 @@ form.addEventListener('submit', e => {
       .then(() => {
         error.textContent = '';
         input.value = '';
-      });
+      })
+      .catch(err => console.log(err));
   } else {
     error.textContent = 'Please enter a valid distance';
   }
